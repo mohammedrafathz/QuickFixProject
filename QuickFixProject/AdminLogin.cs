@@ -45,5 +45,10 @@ namespace QuickFixProject
             
             lnkForgotPassword.LinkVisited = true;
         }
+
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
