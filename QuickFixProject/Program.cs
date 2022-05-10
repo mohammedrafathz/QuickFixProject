@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickFixProject.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace QuickFixProject
         [STAThread]
         static void Main()
         {
+            UsersData ud = new UsersData();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AdminLogin());

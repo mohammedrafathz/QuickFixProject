@@ -64,6 +64,8 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\Tickets.cs" />
+    <Compile Include="DataLayer\Users.cs" />
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Users.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Tickets.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
