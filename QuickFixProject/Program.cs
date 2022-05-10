@@ -16,7 +16,7 @@ namespace QuickFixProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminLogin());
+            Application.Run(new CustomerHomePage());
         }
     }
 }
