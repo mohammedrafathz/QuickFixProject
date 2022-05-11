@@ -21,5 +21,12 @@ namespace QuickFixProject
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerHomepage ch = new CustomerHomepage();
+            ch.Show();
+            this.Hide();
+        }
     }
 }

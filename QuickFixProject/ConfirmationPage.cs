@@ -19,7 +19,7 @@ namespace QuickFixProject
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CustomerHomePage chp = new CustomerHomePage();
+            CreateTicket chp = new CreateTicket();
             this.Hide();
             chp.Show();
 

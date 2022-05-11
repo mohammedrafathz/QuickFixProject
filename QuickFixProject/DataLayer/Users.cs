@@ -11,12 +11,13 @@ namespace QuickFixProject.DataLayer
         public string Username { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
-        public string SecurityQuestion { get; set; }
-        public string SecurityAnswer { get; set; }
+        //public string SecurityQuestion { get; set; }
+        //public string SecurityAnswer { get; set; }
 
         public override string ToString()
         {
-            return UserID + "," + Username + "," + Password + "," + IsAdmin + "," + SecurityQuestion + "," + SecurityAnswer;
+            return UserID + "," + Username + "," + Password + "," + IsAdmin;
+            //+ "," + SecurityQuestion + "," + SecurityAnswer;
         }
     }
 
@@ -65,6 +66,20 @@ namespace QuickFixProject.DataLayer
             }
 
             return null;
+        }
+
+        public List<Users> GetAllTechnicians()
+        {
+            List <Users> lu = new List<Users>();
+            foreach (var user in users)
+            {
+                if (user.IsAdmin)
+                {
+                    lu.Add(user);
+                }
+            }
+
+            return lu;
         }
 
         public string CustomerLogin(string userId, string password)
@@ -165,25 +180,25 @@ namespace QuickFixProject.DataLayer
             }
         }
 
-        public bool SecurityQuestionCheck(string userId, string question, string answer)
-        {
-            bool result = false;
-            Users user = GetUserByid(userId);
+        //public bool SecurityQuestionCheck(string userId, string question, string answer)
+        //{
+        //    bool result = false;
+        //    Users user = GetUserByid(userId);
 
-            if (user != null)
-            {
-                if (user.SecurityQuestion == question && user.SecurityAnswer == answer)
-                {
-                    result = true;
-                }
-                else
-                {
-                    result = false;
-                }
-            }
+        //    if (user != null)
+        //    {
+        //        if (user.SecurityQuestion == question && user.SecurityAnswer == answer)
+        //        {
+        //            result = true;
+        //        }
+        //        else
+        //        {
+        //            result = false;
+        //        }
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
         public string CreateNewUser(Users newUser)
         {
@@ -197,17 +212,19 @@ namespace QuickFixProject.DataLayer
             {
                 try
                 {
-                    StreamWriter writer = new StreamWriter(filePath);
+                    using (StreamWriter writer = new StreamWriter(filePath, true))
+                    {
+                        var user = new Users();
+                        user.UserID = newUser.UserID;
+                        user.IsAdmin = newUser.IsAdmin;
+                        user.Username = newUser.Username;
+                        user.Password = newUser.Password;
+                        //user.SecurityAnswer = newUser.SecurityAnswer;
+                        //user.SecurityQuestion = newUser.SecurityQuestion;
 
-                    var user = new Users();
-                    user.UserID = newUser.UserID;
-                    user.IsAdmin = newUser.IsAdmin;
-                    user.Username = newUser.Username;
-                    user.Password = newUser.Password;
-                    user.SecurityAnswer = newUser.SecurityAnswer;
-                    user.SecurityQuestion = newUser.SecurityQuestion;
+                        writer.WriteLine(user.ToString());
 
-                    writer.WriteLine(user.ToString());
+                    }
 
                     return "New user created successfully";
                 }

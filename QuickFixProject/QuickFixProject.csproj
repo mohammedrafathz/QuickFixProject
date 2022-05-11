@@ -70,6 +70,13 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="CustomerHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHomepage.Designer.cs">
+      <DependentUpon>CustomerHomepage.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\Tickets.cs" />
     <Compile Include="DataLayer\Users.cs" />
     <Compile Include="ConfirmationPage.cs">
@@ -78,11 +85,11 @@
     <Compile Include="ConfirmationPage.Designer.cs">
       <DependentUpon>ConfirmationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerHomePage.cs">
+    <Compile Include="CreateTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerHomePage.Designer.cs">
-      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    <Compile Include="CreateTicket.Designer.cs">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerLogin.cs">
       <SubType>Form</SubType>
@@ -146,11 +153,23 @@
     <Compile Include="TechnicianTicketSummary.Designer.cs">
       <DependentUpon>TechnicianTicketSummary.cs</DependentUpon>
     </Compile>
+    <Compile Include="TicketDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketDetails.Designer.cs">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketStatus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TicketStatus.Designer.cs">
       <DependentUpon>TicketStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTickets.Designer.cs">
+      <DependentUpon>ViewTickets.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
@@ -167,8 +186,11 @@
     <EmbeddedResource Include="ConfirmationPage.resx">
       <DependentUpon>ConfirmationPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerHomePage.resx">
-      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    <EmbeddedResource Include="CreateTicket.resx">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHomepage.resx">
+      <DependentUpon>CustomerHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerLogin.resx">
       <DependentUpon>CustomerLogin.cs</DependentUpon>
@@ -204,8 +226,14 @@
     <EmbeddedResource Include="TechnicianTicketSummary.resx">
       <DependentUpon>TechnicianTicketSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TicketDetails.resx">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicketStatus.resx">
       <DependentUpon>TicketStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTickets.resx">
+      <DependentUpon>ViewTickets.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

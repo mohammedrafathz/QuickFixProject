@@ -9,6 +9,7 @@ namespace QuickFixProject.DataLayer
 {
     internal class Tickets
     {
+        public int TicketId { get; set; }
         public string CustomerName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
@@ -17,6 +18,13 @@ namespace QuickFixProject.DataLayer
         public string Category { get; set; }
         public string Priority { get; set; }
         public string Impact { get; set; }
+        public string CustomerId { get; set; }
+        public string Status { get; set; }
+        public string TechnicianId { get; set; }
+        public override string ToString()
+        {
+            return $@"{TicketId},{CustomerName},{Email},{PhoneNumber},{Location},{Description},{Category},{Priority},{Impact},{CustomerId},{Status},null";
+        }
     }
 
     class TicketsData
@@ -25,6 +33,11 @@ namespace QuickFixProject.DataLayer
         List<Tickets> tickets = new List<Tickets>();
 
         public TicketsData()
+        {
+            LoadData();
+        }
+
+        public void LoadData()
         {
             if (File.Exists(filePath))
             {
@@ -36,14 +49,18 @@ namespace QuickFixProject.DataLayer
                         var values = line.Split(',');
                         Tickets ticket = new Tickets()
                         {
-                            CustomerName = values[0],
-                            Email = values[1],
-                            PhoneNumber = values[2],
-                            Location = values[3],
-                            Description = values[4],
-                            Category = values[5],
-                            Priority = values[6],
-                            Impact = values[7],
+                            TicketId = Convert.ToInt32(values[0]),
+                            CustomerName = values[1],
+                            Email = values[2],
+                            PhoneNumber = values[3],
+                            Location = values[4],
+                            Description = values[5],
+                            Category = values[6],
+                            Priority = values[7],
+                            Impact = values[8],
+                            CustomerId = values[9],
+                            Status = values[10],
+                            TechnicianId = values[11],
                         };
 
                         tickets.Add(ticket);
@@ -57,14 +74,138 @@ namespace QuickFixProject.DataLayer
             return tickets;
         }
 
-        public string AddTicket(Tickets ticket)
+        public Tickets GetTicketById(int id)
         {
-            return "";
+            foreach (var t in tickets)
+            {
+                if (t.TicketId == id)
+                {
+                    return t;
+                }
+            }
+
+            return null;
         }
 
-        public string UpdateTicketStatus(Tickets ticket)
+        public string AddTicket(Tickets ticket)
         {
-            return "";
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    ticket.TicketId = tickets.Count + 1;
+                    writer.WriteLine(ticket.ToString());
+                }
+
+                tickets.Clear();
+                LoadData();
+
+                return "Ticket Added Succcessfully";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to create new ticket", ex.Message);
+                return null;
+            }
+        }
+
+        public string UpdateTicketStatus(string status, int ticketId)
+        {
+            try
+            {
+                bool result = false;
+                List<string> lines = new List<string>();
+
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.Contains(","))
+                        {
+                            string[] split = line.Split(',');
+
+                            if (Convert.ToInt32(split[0]) == ticketId)
+                            {
+                                result = true;
+                                split[10] = status;
+                                line = string.Join(",", split);
+                            }
+                        }
+
+                        lines.Add(line);
+                    }
+                }
+
+                using (StreamWriter writer = new StreamWriter(filePath, false))
+                {
+                    foreach (string line in lines)
+                        writer.WriteLine(line);
+                }
+                if (result)
+                {
+                    return "Status Changed";
+                }
+                else
+                {
+                    return "Ticket does not exists.";
+                }
+            }
+            catch (Exception)
+            {
+                return "Failed to change ticket status, error occured";
+            }
+        }
+
+        public string AssignTechnician(string technicianId, int ticketId)
+        {
+            try
+            {
+                bool result = false;
+                List<string> lines = new List<string>();
+
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.Contains(","))
+                        {
+                            string[] split = line.Split(',');
+                            if (Convert.ToInt32(split[0]) == ticketId)
+                            {
+                                result = true;
+                                split[10] = "Assigned";
+                                split[11] = technicianId;
+                                line = string.Join(",", split);
+                            }
+                        }
+
+                        lines.Add(line);
+                    }
+                }
+
+                using (StreamWriter writer = new StreamWriter(filePath, false))
+                {
+                    foreach (string line in lines)
+                        writer.WriteLine(line);
+                }
+
+                if (result)
+                {
+                    return "Ticket Assigned";
+                }
+                else
+                {
+                    return "Ticket does not exists.";
+                }
+            }
+            catch (Exception)
+            {
+                return "Failed to assign ticket, error occured";
+            }
         }
     }
 }
