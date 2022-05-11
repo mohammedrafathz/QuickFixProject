@@ -71,5 +71,35 @@ namespace QuickFixProject
                 lblMsg.Text = message;
             }
         }
+
+        private void TicketDetails_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLocation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTech_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
