@@ -52,7 +52,8 @@ namespace QuickFixProject
 
                 if (message == "Login Success")
                 {
-                    CreateTicket customerHomePage = new CreateTicket();
+                    CurrentUser.CurrentUserId = txtUserId.Text;
+                    CustomerHomepage customerHomePage = new CustomerHomepage();
 
                     this.Hide();
                     customerHomePage.Show();
@@ -68,6 +69,14 @@ namespace QuickFixProject
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "Please enter your credentials";
             }
+        }
+
+        private void lnkHome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Homepage hm = new Homepage();
+            hm.Show();
+
+            this.Hide();
         }
     }
 }

@@ -106,7 +106,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(371, 419);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 31);
             this.button1.TabIndex = 7;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;

@@ -11,12 +11,13 @@ namespace QuickFixProject.DataLayer
         public string Username { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        public string Role { get; set; }
         //public string SecurityQuestion { get; set; }
         //public string SecurityAnswer { get; set; }
 
         public override string ToString()
         {
-            return UserID + "," + Username + "," + Password + "," + IsAdmin;
+            return $"{UserID},{Username},{Password},{IsAdmin},{Role}";
             //+ "," + SecurityQuestion + "," + SecurityAnswer;
         }
     }
@@ -41,7 +42,8 @@ namespace QuickFixProject.DataLayer
                             UserID = values[0],
                             Username = values[1],
                             Password = values[2],
-                            IsAdmin = Convert.ToBoolean(values[3])
+                            IsAdmin = Convert.ToBoolean(values[3]),
+                            Role = values[4]
                         };
 
                         users.Add(u);
@@ -73,7 +75,7 @@ namespace QuickFixProject.DataLayer
             List <Users> lu = new List<Users>();
             foreach (var user in users)
             {
-                if (user.IsAdmin)
+                if (user.Role == "Technician")
                 {
                     lu.Add(user);
                 }
@@ -88,7 +90,28 @@ namespace QuickFixProject.DataLayer
 
             if (u != null)
             {
-                if (u.UserID == userId && u.Password == password)
+                if (u.UserID == userId && u.Password == password && u.Role == "Customer")
+                {
+                    return "Login Success";
+                }
+                else
+                {
+                    return "Invalid User Id or Password";
+                }
+            }
+            else
+            {
+                return "User does not exists";
+            }
+        }
+
+        public string TechnicianLogin(string userId, string password)
+        {
+            Users u = GetUserByid(userId);
+
+            if (u != null)
+            {
+                if (u.UserID == userId && u.Password == password && u.Role == "Technician")
                 {
                     return "Login Success";
                 }
@@ -219,6 +242,7 @@ namespace QuickFixProject.DataLayer
                         user.IsAdmin = newUser.IsAdmin;
                         user.Username = newUser.Username;
                         user.Password = newUser.Password;
+                        user.Role = newUser.Role;
                         //user.SecurityAnswer = newUser.SecurityAnswer;
                         //user.SecurityQuestion = newUser.SecurityQuestion;
 
@@ -234,7 +258,6 @@ namespace QuickFixProject.DataLayer
                     return null;
                 }
             }
-
         }
     }
 }

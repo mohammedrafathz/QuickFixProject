@@ -1,3 +1,10 @@
-peter_123,Peter Parker,123456,true
-mary,mary,mary,False
-tony_stark,Tony Stark,123456,True
+peter_123,Peter Parker,123456,true,Admin
+mary,mary,mary,False,Customer
+tony_stark,Tony Stark,123456,False,Technician
+harry_123,harry,harry,False,Customer
+steve123,Captian Amerca,steve123,False,Technician
+blackie,Black Panther,black,True,Admin
+john,John Doe,john123,False,Technician
+lori,lori_ana,lori111,True,Admin
+marry,marry_lee,marry222,False,Customer
+grey,grey_tim,GREY333,False,Technician

@@ -77,7 +77,7 @@ namespace QuickFixProject
                 t.Email = txtEmail.Text;
                 t.Location = txtLocation.Text;
                 t.Category = ddlCategory.SelectedItem.ToString();
-                t.Impact = ddlCategory.SelectedItem.ToString();
+                t.Impact = ddlImpact.SelectedItem.ToString();
                 t.CustomerId = CurrentUser.CurrentUserId;
                 t.Status = "Open";
 

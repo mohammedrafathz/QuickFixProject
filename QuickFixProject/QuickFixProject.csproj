@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,12 +71,24 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeStatus.Designer.cs">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentUser.cs" />
     <Compile Include="CustomerHomepage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerHomepage.Designer.cs">
       <DependentUpon>CustomerHomepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataLayer\Tickets.cs" />
     <Compile Include="DataLayer\Users.cs" />
@@ -109,11 +122,11 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
     <Compile Include="OpenTicketSummary.cs">
       <SubType>Form</SubType>
@@ -123,11 +136,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Searching tickets.cs">
+    <Compile Include="SearchTickets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Searching tickets.Designer.cs">
-      <DependentUpon>Searching tickets.cs</DependentUpon>
+    <Compile Include="SearchTickets.Designer.cs">
+      <DependentUpon>SearchTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="SecurityQuestion.cs">
       <SubType>Form</SubType>
@@ -141,11 +154,17 @@
     <Compile Include="TechnicianLogin.Designer.cs">
       <DependentUpon>TechnicianLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="technicianSignUp.cs">
+    <Compile Include="TechnicianSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="technicianSignUp.Designer.cs">
-      <DependentUpon>technicianSignUp.cs</DependentUpon>
+    <Compile Include="TechnicianSignUp.Designer.cs">
+      <DependentUpon>TechnicianSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechnicianTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechnicianTickets.Designer.cs">
+      <DependentUpon>TechnicianTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="TechnicianTicketSummary.cs">
       <SubType>Form</SubType>
@@ -183,6 +202,9 @@
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeStatus.resx">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfirmationPage.resx">
       <DependentUpon>ConfirmationPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,8 +220,14 @@
     <EmbeddedResource Include="CustomerSignUp.resx">
       <DependentUpon>CustomerSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenTicketSummary.resx">
       <DependentUpon>OpenTicketSummary.cs</DependentUpon>
@@ -214,14 +242,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Searching tickets.resx">
-      <DependentUpon>Searching tickets.cs</DependentUpon>
+    <EmbeddedResource Include="SearchTickets.resx">
+      <DependentUpon>SearchTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TechnicianLogin.resx">
       <DependentUpon>TechnicianLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="technicianSignUp.resx">
-      <DependentUpon>technicianSignUp.cs</DependentUpon>
+    <EmbeddedResource Include="TechnicianSignUp.resx">
+      <DependentUpon>TechnicianSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechnicianTickets.resx">
+      <DependentUpon>TechnicianTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TechnicianTicketSummary.resx">
       <DependentUpon>TechnicianTicketSummary.cs</DependentUpon>

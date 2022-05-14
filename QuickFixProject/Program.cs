@@ -18,7 +18,7 @@ namespace QuickFixProject
             UsersData ud = new UsersData();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewTickets());
+            Application.Run(new Homepage());
         }
     }
 }

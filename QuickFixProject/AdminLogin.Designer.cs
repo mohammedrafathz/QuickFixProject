@@ -37,8 +37,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lnkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.lnkAdminSignUp = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.lnkHome = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -127,17 +127,6 @@
             this.lnkAdminSignUp.Text = "Create New Account";
             this.lnkAdminSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(240, 321);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(100, 16);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Customer Login";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
@@ -146,14 +135,25 @@
             this.lblMessage.Size = new System.Drawing.Size(0, 16);
             this.lblMessage.TabIndex = 8;
             // 
+            // lnkHome
+            // 
+            this.lnkHome.AutoSize = true;
+            this.lnkHome.Location = new System.Drawing.Point(86, 47);
+            this.lnkHome.Name = "lnkHome";
+            this.lnkHome.Size = new System.Drawing.Size(44, 16);
+            this.lnkHome.TabIndex = 9;
+            this.lnkHome.TabStop = true;
+            this.lnkHome.Text = "Home";
+            this.lnkHome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkHome_LinkClicked);
+            // 
             // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lnkHome);
             this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lnkAdminSignUp);
             this.Controls.Add(this.lnkForgotPassword);
             this.Controls.Add(this.button1);
@@ -182,7 +182,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel lnkForgotPassword;
         private System.Windows.Forms.LinkLabel lnkAdminSignUp;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.LinkLabel lnkHome;
     }
 }

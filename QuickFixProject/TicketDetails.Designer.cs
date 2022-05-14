@@ -35,7 +35,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -53,13 +52,16 @@
             this.lblMsg = new System.Windows.Forms.Label();
             this.lblStatuswewq = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnChangeStatus = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblResolution = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(99, 147);
+            this.label2.Location = new System.Drawing.Point(75, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 10;
@@ -69,7 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(85, 188);
+            this.label3.Location = new System.Drawing.Point(75, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 16;
@@ -79,17 +81,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(85, 230);
+            this.label4.Location = new System.Drawing.Point(75, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Contact Number";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(104, 271);
+            this.label5.Location = new System.Drawing.Point(75, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 12;
@@ -101,15 +104,15 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(75, 354);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 17);
+            this.label6.Size = new System.Drawing.Size(135, 17);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Issue\'s Description";
+            this.label6.Text = "Issue Description";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(99, 312);
+            this.label7.Location = new System.Drawing.Point(75, 317);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 17);
             this.label7.TabIndex = 14;
@@ -119,25 +122,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(570, 318);
+            this.label8.Location = new System.Drawing.Point(568, 318);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 15;
             this.label8.Text = "Imapct";
             // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(285, 78);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblMessage.TabIndex = 24;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(371, 317);
+            this.label9.Location = new System.Drawing.Point(328, 318);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 17);
             this.label9.TabIndex = 25;
@@ -147,7 +142,7 @@
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(354, 147);
+            this.lblCustomerName.Location = new System.Drawing.Point(313, 147);
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.Size = new System.Drawing.Size(0, 17);
             this.lblCustomerName.TabIndex = 26;
@@ -156,7 +151,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(387, 188);
+            this.lblEmail.Location = new System.Drawing.Point(313, 188);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 17);
             this.lblEmail.TabIndex = 27;
@@ -165,7 +160,7 @@
             // 
             this.lblNumber.AutoSize = true;
             this.lblNumber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumber.Location = new System.Drawing.Point(371, 230);
+            this.lblNumber.Location = new System.Drawing.Point(313, 230);
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(0, 17);
             this.lblNumber.TabIndex = 28;
@@ -174,7 +169,7 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.Location = new System.Drawing.Point(381, 261);
+            this.lblLocation.Location = new System.Drawing.Point(313, 271);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(0, 17);
             this.lblLocation.TabIndex = 29;
@@ -217,9 +212,9 @@
             // 
             // btnGoback
             // 
-            this.btnGoback.Location = new System.Drawing.Point(102, 61);
+            this.btnGoback.Location = new System.Drawing.Point(33, 41);
             this.btnGoback.Name = "btnGoback";
-            this.btnGoback.Size = new System.Drawing.Size(96, 23);
+            this.btnGoback.Size = new System.Drawing.Size(96, 33);
             this.btnGoback.TabIndex = 34;
             this.btnGoback.Text = "Go Back";
             this.btnGoback.UseVisualStyleBackColor = true;
@@ -229,7 +224,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 402);
+            this.label1.Location = new System.Drawing.Point(79, 502);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 17);
             this.label1.TabIndex = 35;
@@ -237,9 +232,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(253, 463);
+            this.button1.Location = new System.Drawing.Point(269, 551);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(86, 34);
             this.button1.TabIndex = 36;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -247,9 +242,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(424, 463);
+            this.button2.Location = new System.Drawing.Point(440, 551);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(113, 34);
             this.button2.TabIndex = 37;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -258,7 +253,7 @@
             // cbTech
             // 
             this.cbTech.FormattingEnabled = true;
-            this.cbTech.Location = new System.Drawing.Point(288, 400);
+            this.cbTech.Location = new System.Drawing.Point(292, 500);
             this.cbTech.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTech.Name = "cbTech";
             this.cbTech.Size = new System.Drawing.Size(252, 24);
@@ -267,7 +262,7 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Location = new System.Drawing.Point(240, 94);
+            this.lblMsg.Location = new System.Drawing.Point(328, 41);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(0, 16);
             this.lblMsg.TabIndex = 39;
@@ -276,7 +271,7 @@
             // 
             this.lblStatuswewq.AutoSize = true;
             this.lblStatuswewq.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatuswewq.Location = new System.Drawing.Point(99, 116);
+            this.lblStatuswewq.Location = new System.Drawing.Point(75, 116);
             this.lblStatuswewq.Name = "lblStatuswewq";
             this.lblStatuswewq.Size = new System.Drawing.Size(54, 17);
             this.lblStatuswewq.TabIndex = 40;
@@ -291,11 +286,44 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 17);
             this.lblStatus.TabIndex = 41;
             // 
+            // btnChangeStatus
+            // 
+            this.btnChangeStatus.Location = new System.Drawing.Point(605, 61);
+            this.btnChangeStatus.Name = "btnChangeStatus";
+            this.btnChangeStatus.Size = new System.Drawing.Size(154, 33);
+            this.btnChangeStatus.TabIndex = 42;
+            this.btnChangeStatus.Text = "Change Status";
+            this.btnChangeStatus.UseVisualStyleBackColor = true;
+            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(75, 424);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 17);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Resolution";
+            this.label10.Visible = false;
+            // 
+            // lblResolution
+            // 
+            this.lblResolution.AutoSize = true;
+            this.lblResolution.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResolution.Location = new System.Drawing.Point(289, 424);
+            this.lblResolution.Name = "lblResolution";
+            this.lblResolution.Size = new System.Drawing.Size(0, 17);
+            this.lblResolution.TabIndex = 44;
+            // 
             // TicketDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 538);
+            this.ClientSize = new System.Drawing.Size(832, 700);
+            this.Controls.Add(this.lblResolution);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnChangeStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblStatuswewq);
             this.Controls.Add(this.lblMsg);
@@ -313,7 +341,6 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -323,6 +350,7 @@
             this.Controls.Add(this.label2);
             this.Name = "TicketDetails";
             this.Text = "TicketDetails";
+            this.Load += new System.EventHandler(this.TicketDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +365,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblEmail;
@@ -355,5 +382,8 @@
         private System.Windows.Forms.Label lblMsg;
         private System.Windows.Forms.Label lblStatuswewq;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnChangeStatus;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblResolution;
     }
 }

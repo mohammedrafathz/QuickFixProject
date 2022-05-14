@@ -28,6 +28,8 @@ namespace QuickFixProject
                 u.Password = txtPassword.Text;
                 u.UserID = txtUserId.Text;
                 u.IsAdmin = true;
+                u.Role = "Admin";
+
                 string message = userdb.CreateNewUser(u);
 
                 if (message == "New user created successfully")

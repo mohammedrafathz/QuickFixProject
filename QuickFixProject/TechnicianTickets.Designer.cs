@@ -1,6 +1,6 @@
 ﻿namespace QuickFixProject
 {
-    partial class ViewTickets
+    partial class TechnicianTickets
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.ticketId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locations = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.details = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGoBack = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(85, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 33);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "MY TICKETS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvTickets
             // 
@@ -48,12 +63,12 @@
             this.locations,
             this.status,
             this.details});
-            this.dgvTickets.Location = new System.Drawing.Point(12, 96);
+            this.dgvTickets.Location = new System.Drawing.Point(24, 99);
             this.dgvTickets.Name = "dgvTickets";
             this.dgvTickets.RowHeadersWidth = 51;
             this.dgvTickets.RowTemplate.Height = 24;
             this.dgvTickets.Size = new System.Drawing.Size(920, 501);
-            this.dgvTickets.TabIndex = 0;
+            this.dgvTickets.TabIndex = 4;
             this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
             // 
             // ticketId
@@ -93,40 +108,45 @@
             this.details.ReadOnly = true;
             this.details.Width = 125;
             // 
-            // label1
+            // btnLogout
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(335, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 33);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ALL OPEN TICKETS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnLogout.Location = new System.Drawing.Point(818, 38);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(87, 33);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnGoBack
+            // label2
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(28, 19);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(95, 28);
-            this.btnGoBack.TabIndex = 4;
-            this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
-            this.btnGoBack.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(444, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Logged in as:";
             // 
-            // ViewTickets
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(551, 48);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 16);
+            this.lblUser.TabIndex = 8;
+            // 
+            // TechnicianTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 738);
-            this.Controls.Add(this.btnGoBack);
+            this.ClientSize = new System.Drawing.Size(969, 644);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvTickets);
-            this.Name = "ViewTickets";
-            this.Text = "ViewTickets";
+            this.Name = "TechnicianTickets";
+            this.Text = "TechnicianTickets";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,13 +155,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketId;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn locations;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewLinkColumn details;
-        private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUser;
     }
 }

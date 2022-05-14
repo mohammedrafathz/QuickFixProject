@@ -10,24 +10,29 @@ using System.Windows.Forms;
 
 namespace QuickFixProject
 {
-    public partial class CustomerHomepage : Form
-    {   
-        public CustomerHomepage()
+    public partial class Homepage : Form
+    {
+        public Homepage()
         {
             InitializeComponent();
-            lblCurrentUser.Text = CurrentUser.CurrentUserId;
         }
 
-        private void btnNewTicket_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
-            CreateTicket ct = new CreateTicket();
-            ct.Show();
+            AdminLogin al = new AdminLogin();
+            al.Show();
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTech_Click(object sender, EventArgs e)
         {
-            CurrentUser.CurrentUserId = "";
+            TechnicianLogin tl = new TechnicianLogin();
+            tl.Show();
+            this.Hide();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
             CustomerLogin cl = new CustomerLogin();
             cl.Show();
             this.Hide();

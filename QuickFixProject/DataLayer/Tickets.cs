@@ -21,9 +21,10 @@ namespace QuickFixProject.DataLayer
         public string CustomerId { get; set; }
         public string Status { get; set; }
         public string TechnicianId { get; set; }
+        public string Resolution { get; set; }
         public override string ToString()
         {
-            return $@"{TicketId},{CustomerName},{Email},{PhoneNumber},{Location},{Description},{Category},{Priority},{Impact},{CustomerId},{Status},null";
+            return $@"{TicketId},{CustomerName},{Email},{PhoneNumber},{Location},{Description},{Category},{Priority},{Impact},{CustomerId},{Status},null,null";
         }
     }
 
@@ -61,6 +62,7 @@ namespace QuickFixProject.DataLayer
                             CustomerId = values[9],
                             Status = values[10],
                             TechnicianId = values[11],
+                            Resolution = values[12]
                         };
 
                         tickets.Add(ticket);
@@ -72,6 +74,21 @@ namespace QuickFixProject.DataLayer
         public List<Tickets> GetAllTickets()
         {
             return tickets;
+        }
+
+        public List<Tickets> SearchTickets(string searchTerm)
+        {
+            List<Tickets> tl = new List<Tickets>();
+
+            foreach (var t in tickets)
+            {
+                if (t.CustomerName == searchTerm || t.TechnicianId == searchTerm)
+                {
+                    tl.Add(t);
+                }
+            }
+
+            return tl;
         }
 
         public Tickets GetTicketById(int id)
@@ -109,7 +126,7 @@ namespace QuickFixProject.DataLayer
             }
         }
 
-        public string UpdateTicketStatus(string status, int ticketId)
+        public string UpdateTicketStatus(string status, string resolution, int ticketId)
         {
             try
             {
@@ -130,6 +147,7 @@ namespace QuickFixProject.DataLayer
                             {
                                 result = true;
                                 split[10] = status;
+                                split[12] = resolution;
                                 line = string.Join(",", split);
                             }
                         }

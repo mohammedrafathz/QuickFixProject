@@ -37,9 +37,10 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(122, 76);
+            this.button1.Location = new System.Drawing.Point(205, 76);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 68);
+            this.button1.Size = new System.Drawing.Size(217, 54);
             this.button1.TabIndex = 0;
             this.button1.Text = "View Tickets";
             this.button1.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(122, 190);
+            this.button2.Location = new System.Drawing.Point(205, 167);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 68);
+            this.button2.Size = new System.Drawing.Size(217, 54);
             this.button2.TabIndex = 0;
             this.button2.Text = "Search Assigned Tickets";
             this.button2.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(122, 304);
+            this.button3.Location = new System.Drawing.Point(205, 258);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 68);
+            this.button3.Size = new System.Drawing.Size(217, 54);
             this.button3.TabIndex = 0;
             this.button3.Text = "Create\\View Dashboards";
             this.button3.UseVisualStyleBackColor = true;
@@ -71,12 +74,13 @@
             // 
             // TechnicianTicketSummary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 434);
+            this.ClientSize = new System.Drawing.Size(626, 434);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TechnicianTicketSummary";
             this.Text = "TechnicianTicketSummary";
             this.ResumeLayout(false);

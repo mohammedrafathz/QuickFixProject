@@ -82,5 +82,13 @@ namespace QuickFixProject
             CustomerLogin cl = new CustomerLogin();
             cl.Show();
         }
+
+        private void lnkHome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Homepage hm = new Homepage();
+            hm.Show();
+
+            this.Hide();
+        }
     }
 }

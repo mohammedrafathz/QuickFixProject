@@ -11,20 +11,32 @@ using System.Windows.Forms;
 
 namespace QuickFixProject
 {
-    public partial class ViewTickets : Form
+    public partial class TechnicianTickets : Form
     {
         private TicketsData tickets;
-        public ViewTickets()
+        public TechnicianTickets()
         {
             InitializeComponent();
             tickets = new TicketsData();
+            lblUser.Text = CurrentUser.CurrentUserId;
 
             List<Tickets> tt = tickets.GetAllTickets();
 
             foreach (Tickets t in tt)
             {
-                dgvTickets.Rows.Add(t.TicketId, t.CustomerName, t.Location, t.Status, "Details");
+                if (CurrentUser.CurrentUserId == t.TechnicianId)
+                {
+                    dgvTickets.Rows.Add(t.TicketId, t.CustomerName, t.Location, t.Status, "Details");
+                }
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            CurrentUser.CurrentUserId = "";
+            TechnicianLogin cl = new TechnicianLogin();
+            cl.Show();
+            this.Hide();
         }
 
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,20 +47,6 @@ namespace QuickFixProject
                 td.Show();
                 this.Hide();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AdminHomePage admin = new AdminHomePage();
-
-            admin.Show();
-
-            this.Hide();
         }
     }
 }
