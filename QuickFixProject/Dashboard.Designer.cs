@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+        // Required variables and fields for this form
         #region Windows Form Designer generated code
 
         /// <summary>

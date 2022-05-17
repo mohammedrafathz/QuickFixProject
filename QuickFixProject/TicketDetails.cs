@@ -13,6 +13,11 @@ namespace QuickFixProject
 {
     public partial class TicketDetails : Form
     {
+        ///
+        /// <summary>
+        /// Required designer variables
+        /// Defination and declaration
+        /// 
         private TicketsData td;
         private UsersData ud;
         private int tID;
@@ -61,7 +66,10 @@ namespace QuickFixProject
                 }
             }
         }
-
+        //
+        //Declare and define required fields and methods for ticket details
+        //
+        //btnGoback
         private void btnGoback_Click(object sender, EventArgs e)
         {
             if (users1.IsAdmin)
@@ -77,7 +85,9 @@ namespace QuickFixProject
                 this.Hide();
             }
         }
-
+        //
+        //button2
+        //
         private void button2_Click(object sender, EventArgs e)
         {
             if (users1.IsAdmin)
@@ -93,7 +103,9 @@ namespace QuickFixProject
                 this.Hide();
             }
         }
-
+        //
+        //button1
+        //
         private void button1_Click(object sender, EventArgs e)
         {
             string message = td.AssignTechnician(cbTech.SelectedItem.ToString(), tID);
@@ -109,18 +121,26 @@ namespace QuickFixProject
                 lblMsg.Text = message;
             }
         }
-
+        //
+        //btnChangeStatus
+        //
         private void btnChangeStatus_Click(object sender, EventArgs e)
         {
             ChangeStatus cs = new ChangeStatus(tID);
             cs.Show();
         }
 
+        //
+        //label4
+        //
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
+        //
+        //TicketDetails_Load
+        //
         private void TicketDetails_Load(object sender, EventArgs e)
         {
 

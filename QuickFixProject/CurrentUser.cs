@@ -8,6 +8,7 @@ namespace QuickFixProject
 {
     static class CurrentUser
     {
+        // Global variable to hold current user 
         private static string _currentUserId = "";
         public static string CurrentUserId
         {

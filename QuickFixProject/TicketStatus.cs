@@ -12,6 +12,10 @@ namespace QuickFixProject
 {
     public partial class TicketStatus : Form
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+       
         public TicketStatus()
         {
             InitializeComponent();
